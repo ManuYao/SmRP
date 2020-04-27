@@ -24,6 +24,7 @@ import java.util.ArrayList;
  * inv :
  * Create Menu and Iteam Custom
  */
+ /*
 public class PlayerEntity implements Listener {
                                                                                                     //---Menu Item No Fonction----
     private static Inventory inv = Bukkit.createInventory(null, 36, ChatColor.GOLD + " " + ChatColor.BOLD + "Smrp Test Inventory");
@@ -88,6 +89,31 @@ public class PlayerEntity implements Listener {
         inv.setItem(31, item);
     }
 
+
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Le Bug est ici je ne pige pas quand j'ouvre mon inventaire Perso il me crée un bug tu peut aider et j'ai tous essayer */
     @EventHandler
     public void fonctionItem(InventoryClickEvent e) {
         Player p = (Player) e.getWhoClicked();
@@ -112,12 +138,37 @@ public class PlayerEntity implements Listener {
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
      Version Alogo test, Le but s'il est 0 de tique la couleur du Png sera bleu,
      puis plus la journée plus la couleur changée jusqu'à arriver à rouge
      puis une foi rouge il disparaît */
 
-                                                                                                                //interact smRP
+   /*                                                                                                                //interact smRP
     @EventHandler
     public void PlayerEntity(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
@@ -153,5 +204,5 @@ public class PlayerEntity implements Listener {
     }
 
 }
-
+*/
 
