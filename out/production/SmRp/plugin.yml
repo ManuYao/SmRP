@@ -1,0 +1,9 @@
+name: SmRp
+author: MineBoyFR
+main: fr.mineboyfr.SmRp.Main
+version: 0.7.1
+api-version: 1.13
+
+commands:
+  SmRp:
+    description: Spawn Png ect...
