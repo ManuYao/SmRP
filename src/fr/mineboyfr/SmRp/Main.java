@@ -12,6 +12,7 @@ public class Main extends JavaPlugin {
         this.getCommand("smrp").setExecutor(new SpawnPng.SmRpCmd());
         getServer().getPluginManager().registerEvents((Listener) new PlayerEntity(),this);
         getServer().getPluginManager().registerEvents((Listener) new killEntity(), this);
+        getServer().getPluginManager().registerEvents((Listener) new Chest(), this);
         //getServer().getPluginManager().registerEvents((Listener)new Bed(),this);
 
         System.out.println("----------------------------");

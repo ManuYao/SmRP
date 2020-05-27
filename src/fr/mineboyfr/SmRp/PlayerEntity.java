@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -24,9 +24,8 @@ import java.util.ArrayList;
  * inv :
  * Create Menu and Iteam Custom
  */
- /*
 public class PlayerEntity implements Listener {
-                                                                                                    //---Menu Item No Fonction----
+    //---Menu Item No Fonction----
     private static Inventory inv = Bukkit.createInventory(null, 36, ChatColor.GOLD + " " + ChatColor.BOLD + "Smrp Test Inventory");
 
     static {
@@ -77,7 +76,7 @@ public class PlayerEntity implements Listener {
         lime6.setItemMeta(metaLime0);
         //inv.setItem(8, lime0);
 
-                                                                                                    //---create Item add fonction---
+        //---create Item add fonction---
 
         ItemStack item = new ItemStack(Material.BELL, 1);
         ItemMeta meta1 = item.getItemMeta();
@@ -90,85 +89,47 @@ public class PlayerEntity implements Listener {
     }
 
 
-    */
+    @EventHandler
+    public void test(InventoryOpenEvent I) {
+        Player p = (Player) I.getPlayer();
+        p.sendMessage(ChatColor.BOLD + "Smrp Test Inventory");
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Le Bug est ici je ne pige pas quand j'ouvre mon inventaire Perso il me crée un bug tu peut aider et j'ai tous essayer */
+    /* Le Bug est ici je ne pige pas quand j'ouvre mon inventaire Perso il me crée un bug tu peut aider et j'ai tous essayer */
     @EventHandler
     public void fonctionItem(InventoryClickEvent e) {
         Player p = (Player) e.getWhoClicked();
+        e.getClickedInventory().getType().getDefaultTitle().equalsIgnoreCase(ChatColor.GOLD + " " + ChatColor.BOLD + "Smrp Test Inventory");
 
+        if (e.getCurrentItem() == null) return;
         //Item Test
         if (e.getCurrentItem().getItemMeta().getDisplayName().contains("Decouvert")) {
             p.sendMessage("Hey");
             p.closeInventory();
             e.setCancelled(true);
+            if (!e.getClickedInventory().getType().getDefaultTitle().equalsIgnoreCase(ChatColor.GOLD + " " + ChatColor.BOLD + "Smrp Test Inventory"))
+                ;
+            {
+                p.sendMessage("Ok go");
+            }
         }
 
         while (e.getCurrentItem().getItemMeta().getDisplayName().contains("  ")) {
             e.setCancelled(true);
             break;
         }
-        while (!e.getClickedInventory().getType().equals(inv) || e.getClickedInventory() == null){
-            return;
-        }
-        if (e.getClickedInventory().getType() == InventoryType.PLAYER){
-            p.sendMessage("Pk tu bugggggggggg!");
+        while (!e.getClickedInventory().getType().equals(inv) || e.getClickedInventory() == null) {
             return;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /*
      Version Alogo test, Le but s'il est 0 de tique la couleur du Png sera bleu,
      puis plus la journée plus la couleur changée jusqu'à arriver à rouge
      puis une foi rouge il disparaît */
 
-   /*                                                                                                                //interact smRP
+    //interact smRP
     @EventHandler
     public void PlayerEntity(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
@@ -204,5 +165,5 @@ public class PlayerEntity implements Listener {
     }
 
 }
-*/
+
 
