@@ -3,4 +3,13 @@
     <option name="processCloseConfirmation" value="TERMINATE" />
     <option name="showTipsOnStartup" value="false" />
   </component>
+  <component name="StatusBar">
+    <option name="widgets">
+      <map>
+        <entry key="InspectionProfile" value="false" />
+        <entry key="ReadOnlyAttribute" value="false" />
+        <entry key="git" value="false" />
+      </map>
+    </option>
+  </component>
 </application>
